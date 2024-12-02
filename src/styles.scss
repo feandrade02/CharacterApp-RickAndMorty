@@ -1,1 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif; /* Fonte padrão */
+    color: #FFFFFF; /* Cor base de texto */
+    background-color: #1F1F1F; /* Cor base do fundo */
+    -webkit-font-smoothing: antialiased; /* Melhora o render de fontes */
+    overflow-x: hidden; /* Evita scroll horizontal indesejado */
+}
+
+// Usando as paletas do tema
+$custom-button-toggle-theme: mat.define-light-theme((
+  color: (
+    primary: mat.define-palette(mat.$teal-palette),
+    accent: mat.define-palette(mat.$amber-palette),
+    warn: mat.define-palette(mat.$red-palette),
+  ),
+));
+
+// Aplicando o tema ao componente
+.mat-button-toggle {
+  background-color: mat.get-color-from-palette(mat.$amber-palette, 200);
+  color: mat.get-color-from-palette(mat.$teal-palette, 800);
+}
+
+.mat-button-toggle-checked {
+  background-color: mat.get-color-from-palette(mat.$teal-palette, 500);
+  color: mat.get-color-from-palette(mat.$amber-palette, 50);
+}
+
+@include mat.all-component-themes($custom-button-toggle-theme);
