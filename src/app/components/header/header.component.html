@@ -3,16 +3,19 @@
       <img src="../../../assets/rick-and-morty-logo.png" alt="Rick and Morty">
     </div>
     <mat-button-toggle-group
-      class="custom-toggle-group"
-      (change)="onSelectionChange($event.value)"
-    >
+    [value]="'inicio'"
+    (change)="onSelectionChange($event.value)">
       <!-- Botão Início -->
-      <mat-button-toggle value="inicio" class="custom-toggle">
+      <mat-button-toggle 
+        value="inicio" 
+        class="buttonInicio">
         <i class="material-icons">home</i> Início
       </mat-button-toggle>
 
       <!-- Botão Favoritos -->
-      <mat-button-toggle value="favoritos" class="custom-toggle">
+      <mat-button-toggle 
+        value="favoritos" 
+        class="buttonFavoritos">
         <i class="material-icons">favorite</i> Favoritos
         <span class="count">3</span>
       </mat-button-toggle>

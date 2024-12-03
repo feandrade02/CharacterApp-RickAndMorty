@@ -1,0 +1,33 @@
+.inicio-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 20px;
+  
+    .titulo {
+      color: #00B5CC;
+      font-family: 'Creepster', cursive;
+      font-size: 40px;
+      margin: 0;
+      -webkit-text-stroke-width: .3px;
+      -webkit-text-stroke-color: #B2DF28;
+    }
+  
+    .barra-pesquisa {
+      width: 20%;
+        
+      #form-field {
+        
+        mat-label {
+          color: #CACACA;
+        }
+
+        input {
+          color: #F2F2F2;
+          padding: 10px;
+          
+        }
+    }
+  }
+}
+  

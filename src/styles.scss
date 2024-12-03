@@ -19,25 +19,3 @@ body {
     -webkit-font-smoothing: antialiased; /* Melhora o render de fontes */
     overflow-x: hidden; /* Evita scroll horizontal indesejado */
 }
-
-// Usando as paletas do tema
-$custom-button-toggle-theme: mat.define-light-theme((
-  color: (
-    primary: mat.define-palette(mat.$teal-palette),
-    accent: mat.define-palette(mat.$amber-palette),
-    warn: mat.define-palette(mat.$red-palette),
-  ),
-));
-
-// Aplicando o tema ao componente
-.mat-button-toggle {
-  background-color: mat.get-color-from-palette(mat.$amber-palette, 200);
-  color: mat.get-color-from-palette(mat.$teal-palette, 800);
-}
-
-.mat-button-toggle-checked {
-  background-color: mat.get-color-from-palette(mat.$teal-palette, 500);
-  color: mat.get-color-from-palette(mat.$amber-palette, 50);
-}
-
-@include mat.all-component-themes($custom-button-toggle-theme);

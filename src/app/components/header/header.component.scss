@@ -1,49 +1,51 @@
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #0A0A0A;
-    padding: 10px 20px;
-    
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0a0a0a;
+  padding: 10px 20px;
 
-    .custom-toggle-group {
-      background-color: inherit;
-      border-radius: 15px;
-      border-color: #A4A4A4;
+  i.material-icons {
+    margin-right: 8px;
+  }
+
+  .buttonInicio,
+  .buttonFavoritos {
+    border: #3d3d3d solid 2px;
+    padding: 7px;
+    color: #979797;
+
+    &:hover {
+      background-color: #ffffff;
     }
 
-    .custom-toggle {
-      background-color: inherit;
-      color: #A4A4A4;
-    
-      i.material-icons {
-        margin-right: 8px;
-      }
-
-      .count {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #FFFFFF;
-        color: #000;
-        border-radius: 50%;
-        border: #000 solid 1px;
-        width: 20px; 
-        height: 20px; 
-        font-size: 14px; 
-        font-weight: bold;
-        margin-left: 8px; 
-        padding: 10px;
-      }
-      
-      &:hover {
-        background-color: #FFFFFF;
-      }
-    
-      &.mat-button-toggle-checked {
-        background-color: #FFFFFF;
-        color: #000;
-      }
-    }    
+    &.mat-button-toggle-checked {
+      background-color: #ffffff;
+      color: #000;
+    }
   }
-  
+
+  .buttonInicio {
+    border-radius: 15px 0 0 15px;
+  }
+
+  .buttonFavoritos {
+    border-radius: 0 15px 15px 0;
+
+    .count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f2f2f2;
+      color: #000;
+      border-radius: 50%;
+      border: #3d3d3d solid 2px;
+      width: 20px;
+      height: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      margin-left: 8px;
+      padding: 10px;
+    }
+  }
+}
