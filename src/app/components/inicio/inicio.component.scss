@@ -55,6 +55,29 @@
       }
     }
   }
+
+  .not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    text-align: center;
+    background-color: #0A0A0A;
+    border: #3D3D3D solid 1px;
+    border-radius: 10px;
+    color: #fff;
+  
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  
+    p {
+      font-size: 16px;
+      color: #a4a4a4;
+    }
+  }
   
   .characters-container {
     display: grid;
