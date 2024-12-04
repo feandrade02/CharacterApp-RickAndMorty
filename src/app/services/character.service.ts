@@ -7,10 +7,11 @@ import { CharacterResponse } from '../model/interface/character.model';
   providedIn: 'root'
 })
 export class CharacterService {
+  private apiUrl = 'https://rickandmortyapi.com/api/character';
 
   constructor(private http: HttpClient) { }
 
-  getCharacters(): Observable<CharacterResponse> {
-    return this.http.get<CharacterResponse>("https://rickandmortyapi.com/api/character")
+  getCharacters(url: string = this.apiUrl): Observable<CharacterResponse> {
+    return this.http.get<CharacterResponse>(url);
   }
 }

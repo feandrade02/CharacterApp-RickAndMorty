@@ -1,53 +1,113 @@
-.inicio-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 10px 20px;
+.telaInicio {
+  max-width: 65vw;
+  margin: 10px auto;
 
-  .titulo {
-    color: #00B5CC;
-    font-family: 'Creepster', cursive;
-    font-size: 40px;
-    margin: 0;
-    -webkit-text-stroke-width: .3px;
-    -webkit-text-stroke-color: #B2DF28;
-  }
+  .inicio-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+  
+    .titulo {
+      color: #00B5CC;
+      font-family: 'Creepster', cursive;
+      font-size: 40px;
+      margin: 0;
+      -webkit-text-stroke-width: .3px;
+      -webkit-text-stroke-color: #B2DF28;
+    }
+    
+    .search-bar-container {
+      display: flex;
+      align-items: center;
+      background-color: #1F1F1F;
+      border: #5D5D5D solid 1px;
+      border-radius: 15px;
+      padding: 5px 10px;
+      width: 40%;
+  
+      .search-bar {
+        flex: 1;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: #FFFFFF;
+        font-size: 16px;
+        padding: 5px 10px;
+        font-family: inherit;
 
-  .barra-pesquisa {
-    width: 20%;
-      
-    #form-field {
-
-      mat-label {
-        color: #CACACA;
+        &::placeholder {
+          color: #CACACA; 
+        }
       }
-
-      input {
-        color: #F2F2F2;
-        padding: 10px;
-        
+    }
+  }  
+  
+  .loading-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  
+    ::ng-deep mat-spinner {
+      circle {
+        stroke: #00B5CC;
       }
     }
   }
-}  
-
-.characters-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  padding: 20px;
-  max-width: 65vw; 
-  margin: 10px auto;
-  justify-content: center;
-
-  @media screen and (max-width: 768px) {
-    /* Ajusta para telas menores */
-    grid-template-columns: repeat(2, 1fr); /* Apenas 2 colunas em dispositivos menores */
-    max-width: 90vw; /* Reduz o tamanho */
+  
+  .characters-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 10px 0;  
+  
+    @media screen and (max-width: 768px) {
+      /* Ajusta para telas menores */
+      grid-template-columns: repeat(2, 1fr); /* Apenas 2 colunas em dispositivos menores */
+      max-width: 90vw; /* Reduz o tamanho */
+    }
+  
+    @media screen and (max-width: 480px) {
+      /* Ajusta para telas bem pequenas */
+      grid-template-columns: 1fr; /* Apenas 1 coluna */
+    }
   }
-
-  @media screen and (max-width: 480px) {
-    /* Ajusta para telas bem pequenas */
-    grid-template-columns: 1fr; /* Apenas 1 coluna */
+  
+  .pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+  
+    button {
+      background-color: #00B5CC;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  
+      &:hover {
+        background-color: #008C99;
+      }
+  
+      &:disabled {
+        background-color: #A4A4A4;
+        cursor: not-allowed;
+      }
+    }
+  
+    mat-icon {
+      font-size: 24px;
+    }
+  
+    span {
+      font-size: 16px;
+      color: #fff;
+    }
   }
 }

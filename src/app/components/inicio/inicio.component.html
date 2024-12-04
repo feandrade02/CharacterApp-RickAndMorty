@@ -1,24 +1,48 @@
-<div class="inicio-container">
-  <!-- Título -->
-  <h1 class="titulo">Início</h1>
-
-  <!-- Barra de Pesquisa -->
-  <div class="barra-pesquisa">
-    <mat-form-field appearance="outline" id="form-field">
-      <mat-label>Pesquisar</mat-label>
-      <input matInput />
-    </mat-form-field>
+<div class="telaInicio">
+  <div class="inicio-container">
+    <!-- Título -->
+    <h1 class="titulo">Início</h1>
+  
+    <!-- Barra de Pesquisa -->
+     <div class="search-bar-container">
+      <input
+        type="text" 
+        placeholder="Pesquisar"
+        class="search-bar"
+      />
+     </div>
+  </div>
+  
+  <!-- Indicador de Carregamento -->
+  <div class="loading-indicator" *ngIf="isLoading">
+    <mat-spinner diameter="50"></mat-spinner>
+  </div>
+  
+  <!-- Grid de Personagens -->
+  <div class="characters-container" *ngIf="!isLoading">
+    <app-character-card
+      *ngFor="let character of characters"
+      [imageUrl]="character.image"
+      [name]="character.name"
+      [species]="character.species"
+      [type]="character.type">
+    </app-character-card>
+  </div>
+  
+  <!-- Botões de Paginação -->
+  <div class="pagination-controls" *ngIf="!isLoading">
+    <button mat-icon-button (click)="goToFirstPage()" [disabled]="currentPage === 1">
+      <mat-icon>first_page</mat-icon>
+    </button>
+    <button mat-icon-button (click)="goToPrevPage()" [disabled]="currentPage === 1">
+      <mat-icon>navigate_before</mat-icon>
+    </button>
+    <span>Página {{ currentPage }} de {{ totalPages }}</span>
+    <button mat-icon-button (click)="goToNextPage()" [disabled]="currentPage === totalPages">
+      <mat-icon>navigate_next</mat-icon>
+    </button>
+    <button mat-icon-button (click)="goToLastPage()" [disabled]="currentPage === totalPages">
+      <mat-icon>last_page</mat-icon>
+    </button>
   </div>
 </div>
-<!-- Grid de Personagens -->
-<div class="characters-container">
-  <app-character-card
-    *ngFor="let character of characters"
-    [imageUrl]="character.image"
-    [name]="character.name"
-    [species]="character.species"
-    [type]="character.type">
-  </app-character-card>
-</div>
-
-  
