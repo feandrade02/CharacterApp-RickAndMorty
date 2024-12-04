@@ -1,1 +1,19 @@
-<p>character-card works!</p>
+<div class="character-card">
+    <!-- Botão de Favoritar -->
+    <button class="favorite-button" (click)="toggleFavorite()">
+      <mat-icon>
+        {{ isFavorited ? 'favorite' : 'favorite_border' }}
+      </mat-icon>
+    </button>
+  
+    <!-- Imagem do Personagem -->
+    <img [src]="imageUrl" alt="{{ name }}" class="character-image" />
+  
+    <!-- Detalhes do Personagem -->
+    <div class="character-info">
+      <h3 class="character-name">{{ name }}</h3>
+      <p class="character-species">{{ species }}</p>
+      <p *ngIf="type" class="character-type">{{ type }}</p>
+    </div>
+  </div>
+  

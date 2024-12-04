@@ -1,0 +1,54 @@
+.character-card {
+    position: relative;
+    background-color: #0A0A0A;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: #3D3D3D solid 1px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  
+    .favorite-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+  
+      mat-icon {
+        font-size: 24px;
+      }
+  
+      &:hover {
+        color: #f44336;
+      }
+    }
+  
+    .character-image {
+      object-fit: cover;
+      width: 100%;
+      height: auto;
+      max-height: 300px;
+    }
+  
+    .character-info {
+      padding: 10px;
+      
+  
+      .character-name {
+        font-family: 'Creepster', cursive;
+        font-size: 26px;
+      }
+  
+      .character-species,
+      .character-type {
+        font-size: 14px;
+        color: #A4A4A4;
+      }
+    }
+  }
+  

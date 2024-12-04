@@ -29,40 +29,25 @@
       }
     }
   }
-
-  .characters-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-
-    .character-card {
-      background: #1e1e1e;
-      border-radius: 8px;
-      overflow: hidden;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-
-      img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-
-      .character-info {
-        padding: 10px;
-
-        h3 {
-          margin: 0;
-          font-size: 18px;
-        }
-
-        p {
-          margin: 5px 0 0;
-          color: #a1a1a1;
-          font-size: 14px;
-        }
-      }
-    }
-  }
 }  
-  
+
+.characters-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 20px;
+  max-width: 65vw; 
+  margin: 10px auto;
+  justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    /* Ajusta para telas menores */
+    grid-template-columns: repeat(2, 1fr); /* Apenas 2 colunas em dispositivos menores */
+    max-width: 90vw; /* Reduz o tamanho */
+  }
+
+  @media screen and (max-width: 480px) {
+    /* Ajusta para telas bem pequenas */
+    grid-template-columns: 1fr; /* Apenas 1 coluna */
+  }
+}

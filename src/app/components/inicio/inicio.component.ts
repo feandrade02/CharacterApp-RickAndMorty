@@ -5,11 +5,18 @@ import { FormsModule } from '@angular/forms';
 import { CharacterService } from '../../services/character.service';
 import { Character, CharacterResponse } from '../../model/interface/character.model'
 import { CommonModule } from '@angular/common';
+import { CharacterCardComponent } from '../character-card/character-card.component';
 
 @Component({
   selector: 'app-inicio',
   standalone: true,
-  imports: [CommonModule, MatFormFieldModule, MatInputModule, FormsModule],
+  imports: [
+    CommonModule, 
+    MatFormFieldModule, 
+    MatInputModule, 
+    FormsModule,
+    CharacterCardComponent
+  ],
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.scss'],
 })
