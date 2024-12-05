@@ -8,13 +8,13 @@ Este aplicativo explora a API pública de Rick and Morty. Ele permite a visualiz
 
 ## Funcionalidades
 
-- *Listagem de Personagens:* Na tela de início é possível navegar por uma lista de personagens do universo de Rick and Morty.
+- __Listagem de Personagens:__ Na tela de início é possível navegar por uma lista de personagens do universo de Rick and Morty.
 
-- *Busca de Personagens:* É possível buscar personagens pelo nome através da barra de pesquisa.
+- __Busca de Personagens:__ É possível buscar personagens pelo nome através da barra de pesquisa.
 
-- *Favoritos:* É possível adicionar e remover personagens da lista de favoritos por meio do botão com ícone de coração nos cards. Há também um contador de personagens favoritos no topo da página. 
+- __Favoritos:__ É possível adicionar e remover personagens da lista de favoritos por meio do botão com ícone de coração nos cards. Há também um contador de personagens favoritos no topo da página. 
 
-- *Paginação:* A navegação entre as páginas é feita através de botões localizados ao fim da tela, além do indicador da página que localiza o usuário no aplicativo.
+- __Paginação:__ A navegação entre as páginas é feita através de botões localizados ao fim da tela, além do indicador da página que localiza o usuário no aplicativo.
 
 ## Disclaimer
 
@@ -22,10 +22,10 @@ O aplicativo foi construído com base na premissa de desafio de Frontend, buscan
 
 ## Tecnologias Utilizadas
 
-- *Frontend:* Angular;
+- __Frontend:__ Angular;
 
-- *Controle de estado:* RxJs;
+- __Controle de estado:__ RxJs;
 
-- *Estilos:* SCSS, Angular MUI;
+- __Estilos:__ SCSS, Angular MUI;
 
-- *API:* Rick and Morty API.
+- __API:__ Rick and Morty API.
