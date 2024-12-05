@@ -1,4 +1,4 @@
-.telaInicio {
+.telaFavoritos {
     max-width: 65vw;
     margin: 10px auto;
   
@@ -52,9 +52,27 @@
         font-size: 16px;
         color: #a4a4a4;
       }
+
+      button {
+        background-color: #fff;
+        color: #0A0A0A;
+        border: none;
+        padding: 10px;
+        font-size: 16px;
+        font-family: inherit;
+        font-weight: bold;
+        border-radius: 15px;
+        margin: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    
+        &:hover {
+          background-color: #c2c2c2;
+        }
+      }
     }
     
-    .characters-container {
+    .favoritos-container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;

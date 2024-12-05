@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { CharacterService } from '../../services/character.service';
+import { Character } from '../../model/interface/character.model';
 
 @Component({
   selector: 'app-character-card',
@@ -10,24 +12,20 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './character-card.component.scss'
 })
 export class CharacterCardComponent {
-  @Input() imageUrl!: string;
-  @Input() name!: string;
-  @Input() species!: string;
-  @Input() type?: string;
-
+  @Input() character!: Character;
   
-  isFavorited = false;
+  isFavorited: boolean = false;
+
+  constructor(private characterService: CharacterService) {}
 
   ngOnInit() {
-    console.log('Dados do personagem:', {
-      imageUrl: this.imageUrl,
-      name: this.name,
-      species: this.species,
-      type: this.type
-    });
+    // Verifica se o personagem está nos favoritos ao inicializar
+    const favorites = this.characterService.getFavorites();
+    this.isFavorited = favorites.some((fav) => fav.id === this.character?.id);
   }
 
   toggleFavorite(): void {
+    this.characterService.toggleFavorite(this.character);
     this.isFavorited = !this.isFavorited;
   }
 }

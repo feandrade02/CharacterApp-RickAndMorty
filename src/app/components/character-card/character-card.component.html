@@ -7,13 +7,13 @@
     </button>
   
     <!-- Imagem do Personagem -->
-    <img [src]="imageUrl" alt="{{ name }}" class="character-image" />
+    <img [src]="character.image" alt="{{ character.name }}" class="character-image" />
   
     <!-- Detalhes do Personagem -->
     <div class="character-info">
-      <h3 class="character-name">{{ name }}</h3>
-      <p class="character-species">{{ species }}</p>
-      <p *ngIf="type" class="character-type">{{ type }}</p>
+      <h3 class="character-name">{{ character.name }}</h3>
+      <p class="character-species">{{ character.species }}</p>
+      <p *ngIf="character.type" class="character-type">{{ character.type }}</p>
     </div>
   </div>
   

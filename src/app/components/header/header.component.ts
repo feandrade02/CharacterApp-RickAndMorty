@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { HeaderstateService } from '../../services/headerstate.service';
+import { CharacterService } from '../../services/character.service';
 
 @Component({
   selector: 'app-header',
@@ -12,30 +14,31 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 })
 export class HeaderComponent {
   buttonToggleValue: string = 'inicio';
+  favoriteCount: number = 0;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private headerstateService: HeaderstateService,
+    private characterService: CharacterService
+  ) {}
 
   ngOnInit(): void {
-    // Recupera o valor salvo no LocalStorage ao carregar o componente
-    const savedValue = localStorage.getItem('buttonToggleValue');
-    if (savedValue) {
-      this.buttonToggleValue = savedValue;
-      if (this.buttonToggleValue === 'inicio') {
-        this.router.navigate(['/']);
-      }
-      else {
-        this.router.navigate([`/${savedValue}`]);
-      }
-    }
+    // Observa mudanças no estado do serviço
+    this.headerstateService.toggleState$.subscribe((state) => {
+      this.buttonToggleValue = state;
+    });
+
+    // Observa a contagem de favoritos
+    this.characterService.favoriteCount$.subscribe((count) => {
+      this.favoriteCount = count;
+    });
   }
 
   onSelectionChange(value: string): void {
-    this.buttonToggleValue = value;
-    localStorage.setItem('buttonToggleValue', value); // Salva o valor no LocalStorage
-    if (this.buttonToggleValue === 'inicio') {
+    this.headerstateService.setToggleState(value); // Atualiza o estado no serviço
+    if (value === 'inicio') {
       this.router.navigate(['/']);
-    }
-    else {
+    } else {
       this.router.navigate([`/${value}`]);
     }
   }
