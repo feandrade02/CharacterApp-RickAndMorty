@@ -1,1 +1,45 @@
-<p>favoritos works!</p>
+<div class="telaInicio">
+    <div class="inicio-container">
+      <!-- Título -->
+      <h1 class="titulo">Favoritos</h1>
+    </div>
+    
+    <!-- Indicador de Carregamento
+    <div class="loading-indicator" *ngIf="isLoading">
+      <mat-spinner diameter="50"></mat-spinner>
+    </div> -->
+  
+    <!-- Mensagem de Nenhum Resultado Encontrado
+    <div class="not-found" *ngIf="!isLoading && searchError">
+      <h2>Nada foi encontrado</h2>
+      <p>Tente realizar uma nova busca.</p>
+    </div> -->
+    
+    <!-- Grid de Personagens
+    <div class="characters-container" *ngIf="!isLoading && !searchError">
+      <app-character-card
+        *ngFor="let character of characters"
+        [imageUrl]="character.image"
+        [name]="character.name"
+        [species]="character.species"
+        [type]="character.type">
+      </app-character-card>
+    </div> -->
+    
+    <!-- Botões de Paginação
+    <div class="pagination-controls" *ngIf="!isLoading && !searchError">
+      <button mat-icon-button (click)="goToFirstPage()" [disabled]="currentPage === 1">
+        <mat-icon>first_page</mat-icon>
+      </button>
+      <button mat-icon-button (click)="goToPrevPage()" [disabled]="currentPage === 1">
+        <mat-icon>navigate_before</mat-icon>
+      </button>
+      <span>Página {{ currentPage }} de {{ totalPages }}</span>
+      <button mat-icon-button (click)="goToNextPage()" [disabled]="currentPage === totalPages">
+        <mat-icon>navigate_next</mat-icon>
+      </button>
+      <button mat-icon-button (click)="goToLastPage()" [disabled]="currentPage === totalPages">
+        <mat-icon>last_page</mat-icon>
+      </button>
+    </div> -->
+  </div>
