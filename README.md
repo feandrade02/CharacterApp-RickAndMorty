@@ -1,27 +1,31 @@
-# CharacterApp
+# CharacterApp-RickAndMorty
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+Esse projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 18.2.11.
 
-## Development server
+## Descrição
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Este aplicativo explora a API pública de Rick and Morty. Ele permite a visualização dos personagens da animação, busca por nome e a criação de uma lista de personagens favoritos. Foram utilizados Subjects do módulo RxJs para controle de estados globais e Angular MUI para alguns componentes de estilo.
 
-## Code scaffolding
+## Funcionalidades
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- *Listagem de Personagens:* Na tela de início é possível navegar por uma lista de personagens do universo de Rick and Morty.
 
-## Build
+- *Busca de Personagens:* É possível buscar personagens pelo nome através da barra de pesquisa.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- *Favoritos:* É possível adicionar e remover personagens da lista de favoritos por meio do botão com ícone de coração nos cards. Há também um contador de personagens favoritos no topo da página. 
 
-## Running unit tests
+- *Paginação:* A navegação entre as páginas é feita através de botões localizados ao fim da tela, além do indicador da página que localiza o usuário no aplicativo.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Disclaimer
 
-## Running end-to-end tests
+O aplicativo foi construído com base na premissa de desafio de Frontend, buscando testar meus conhecimentos no Framework, possuindo assim uma abordagem mais simples, mas que contemplasse conceitos-chave. Dessa forma, busquei deixar as funcionalidades o mais intuitivo possível e com o desempenho adequado e previsível. A interface responde de certa forma a dispositivos mobile, mas pode apresentar algumas formatações ruins em telas muito pequenas, não sendo recomendado o uso nesse caso.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Tecnologias Utilizadas
 
-## Further help
+- *Frontend:* Angular;
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- *Controle de estado:* RxJs;
+
+- *Estilos:* SCSS, Angular MUI;
+
+- *API:* Rick and Morty API.
